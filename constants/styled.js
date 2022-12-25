@@ -27,7 +27,7 @@ export const breakpoints = {
 };
 
 // container
-export const Container = styled.section`
+export const Container = styled.div`
   max-width: 1170px;
   padding: 0 12px;
   margin: 0 auto;
@@ -53,6 +53,7 @@ export const fontWeight = {
 const typogrophy = css`
   font-size: 1rem;
   font-weight: ${fontWeight.regular};
+  margin: 0.5rem 0;
   color: ${({ color }) => color || `${colors.primary}`};
 `;
 
@@ -64,17 +65,20 @@ export const H1 = styled.h1`
   ${typogrophy};
   font-size: 4rem;
   font-weight: ${fontWeight.bold};
+  margin: 2rem 0;
 `;
 
 export const H2 = styled.h2`
   ${typogrophy};
   font-size: 2.5rem;
   font-weight: ${fontWeight.bold};
+  margin: 1.5rem 0;
 `;
 
 export const H3 = styled.h3`
   ${typogrophy};
   font-size: 1.5rem;
+  margin: 1rem 0;
 `;
 
 export const H4 = styled.h4`

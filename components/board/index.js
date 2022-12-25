@@ -1,5 +1,5 @@
 import { H2, P, Container } from '../../constants/styled';
-import { Wrapper } from './styled';
+import { Wrapper, Outer } from './styled';
 
 const Card = ({ title, author, date, desc }) => (
   <Wrapper>
@@ -11,6 +11,10 @@ const Card = ({ title, author, date, desc }) => (
   </Wrapper>
 );
 
-const Board = ({ memos }) => <Container><Wrapper></Wrapper></Container>;
+const Board = ({ memos }) => (
+  <Outer>
+    <Container>{memos && memos.map((memo) => <Card {...memo} />)}</Container>
+  </Outer>
+);
 
 export default Board;

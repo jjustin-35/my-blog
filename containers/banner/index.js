@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import BannerStyle from '../../components/banner';
 
-const Banner = () => {
+const Banner = ({data}) => {
   const [translateY, setTranslateY] = useState(0);
 
   const bannerRef = useRef();
@@ -23,10 +23,8 @@ const Banner = () => {
   }, [translateY]);
 
   return (
-    <section>
-      <div ref={bannerRef}>
-        <BannerStyle />
-      </div>
+    <section ref={bannerRef}>
+      <BannerStyle data={data} />
     </section>
   );
 };

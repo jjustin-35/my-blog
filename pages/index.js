@@ -1,17 +1,16 @@
 import Banner from '../containers/banner';
-import Board from '../components/board';
-import Head from 'next/head';
+import Board from '../containers/board';
+import Head from '../components/head';
+import data from '../constants/data/home';
 
-const index = () => {
+const Home = () => {
   return (
-    <div style={{height: '200vh'}}>
-    <Head>
-      <title>時雨的程設隨筆｜Home</title>
-    </Head>
-      <Banner />
+    <>
+      <Head />
+      <Banner data={data.banner} />
       <Board />
-    </div>
+    </>
   );
 };
 
-export default index;
+export default Home;

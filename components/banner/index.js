@@ -1,8 +1,7 @@
 import { H1, P } from '../../constants/styled';
 import { Wrapper, BlackBack, Text } from './styled';
-import data from './data';
 
-const Banner = () => {
+const Banner = ({data}) => {
   const { title, desc } = data;
 
   return (

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const colors = {
   primary: 'black',
   secondary: '#FFF',
+  dark: '#394248'
 };
 
 export const bgColors = {

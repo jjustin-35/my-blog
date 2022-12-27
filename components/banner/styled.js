@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import data from './data';
+import data from '../../constants/data/home';
+
+const {bgImage} = data.banner;
 
 export const Wrapper = styled.section`
-  background-image: url(${data.bgImage});
+  background-image: url(${bgImage});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,5 +28,5 @@ export const Text = styled.div`
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 5rem;
+  padding: 30vh 0;
 `;

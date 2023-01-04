@@ -28,6 +28,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error', { jsxSingleQuote: false }],
-    "react/react-in-jsx-scope": "off",
+    // "react/react-in-jsx-scope": "off",
   },
 };

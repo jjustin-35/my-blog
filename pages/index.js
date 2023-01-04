@@ -2,6 +2,7 @@ import Banner from '../containers/banner';
 import Board from '../containers/board';
 import Head from '../components/head';
 import data from '../constants/data/home';
+import Footer from '../components/footer';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Head />
       <Banner data={data.banner} />
       <Board />
+      <Footer />
     </>
   );
 };

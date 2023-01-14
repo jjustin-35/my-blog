@@ -1,19 +1,53 @@
-import { Container } from '../../constants/styled';
-import { Wrapper, Inner, Brand, Options, Option } from './styled';
+import Link from 'next/link';
 
-const Header = ({ data }) => (
-  <Wrapper>
-    <Container>
-      <Inner>
-        <Brand />
-        <Options>
-          {data.options.map((option) => (
-            <Option>{option}</Option>
-          ))}
-        </Options>
-      </Inner>
-    </Container>
-  </Wrapper>
+import { Container } from '../../constants/styled';
+import { Wrapper, Inner, Brand, Menu, MobileMenu, Option, BurgerWrapper, BlackMask } from './styled';
+
+const Burger = ({ onClick }) => (
+  <BurgerWrapper onClick={onClick}>
+    <span class="material-icons">menu</span>
+  </BurgerWrapper>
 );
+
+const Header = ({ data, isMobile, isOpen, onClick }) => {
+  const menuSelector = (() => {
+    if (isMobile) {
+      return (
+        <>
+          <Burger onClick={onClick} />
+          <BlackMask isOpen={isOpen} />
+          <MobileMenu isOpen={isOpen}>
+            {data.options.map((option) => (
+              <Option>
+                <Link href={option.link}>{option.text}</Link>
+              </Option>
+            ))}
+          </MobileMenu>
+        </>
+      );
+    }
+
+    return (
+      <Menu>
+        {data.options.map((option) => (
+          <Option>
+            <Link href={option.link}>{option.text}</Link>
+          </Option>
+        ))}
+      </Menu>
+    );
+  })();
+
+  return (
+    <Wrapper>
+      <Container>
+        <Inner>
+          <Brand />
+          {menuSelector}
+        </Inner>
+      </Container>
+    </Wrapper>
+  );
+};
 
 export default Header;

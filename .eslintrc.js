@@ -12,6 +12,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:security/recommended',
   ],
+  parser: "@babel/eslint-parser",
   parserOptions: {
     ecmaVersion: 2021,
     ecmaFeatures: {
@@ -28,6 +29,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error', { jsxSingleQuote: false }],
-    // "react/react-in-jsx-scope": "off",
+    "react/react-in-jsx-scope": "off",
   },
 };

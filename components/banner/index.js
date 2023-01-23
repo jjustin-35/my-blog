@@ -1,11 +1,11 @@
 import { H1, P } from '../../constants/styled';
 import { Wrapper, BlackBack, Text } from './styled';
 
-const Banner = ({data}) => {
-  const { title, desc } = data;
+const Banner = ({ data }) => {
+  const { title, desc, bgImage } = data;
 
   return (
-    <Wrapper>
+    <Wrapper bgImage={bgImage}>
       <BlackBack />
       <Text>
         <H1 color="white">{title}</H1>

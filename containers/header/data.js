@@ -1,4 +1,8 @@
 export default {
+  brand: {
+    src: '/images/common/blog-header-brand-white.svg',
+    alt: 'img-header-brand',
+  },
   options: [
     { text: '首頁', link: '/' },
     { text: '技術文章', link: '/tech' },

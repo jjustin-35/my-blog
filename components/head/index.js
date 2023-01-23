@@ -1,6 +1,6 @@
 import NextHead from 'next/head';
-import data from '../../constants/data/common';
-const { defaultTitle, defaultDesc, siteName, defaultUrl, defaultOGImage } = data.head;
+import data from './data';
+const { defaultTitle, defaultDesc, siteName, defaultUrl, defaultOGImage } = data;
 
 const Head = ({ title, desc, url, ogImage }) => (
   <NextHead>

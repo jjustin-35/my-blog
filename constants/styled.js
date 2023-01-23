@@ -1,13 +1,21 @@
 import styled, { css } from 'styled-components';
 
+const primary = '#56b9ac';
+const secondary = '#f9c630';
+const third = '#f98a8a';
+
 export const colors = {
-  primary: 'black',
-  secondary: '#FFF',
+  primary,
+  secondary,
+  third,
   dark: '#394248'
 };
 
 export const bgColors = {
-  primary: '#FFF',
+  primary,
+  secondary,
+  third,
+  purple: '#4e2ec8',
 };
 
 const breakdown = (query) => (style) =>

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import Link from 'next/link';
 import { colors, breakpoints } from '../../constants/styled';
 
 export const Wrapper = styled.div`
@@ -7,8 +8,10 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: #fff;
-  transition: all 0.3s ease;
+  padding: 12px;
+  background-color: rgba(255,255,255,0.3);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  transition: background-color 0.3s ease;
 
   ${breakpoints.md(css`
     display: none;
@@ -21,7 +24,7 @@ export const Inner = styled.div`
   align-items: center;
 `;
 
-export const Brand = styled.a`
+export const Brand = styled(Link)`
   width: 200px;
   img {
     width: 100%;
@@ -40,6 +43,9 @@ export const Option = styled.li`
     padding: 0.5rem 1rem;
     color: ${colors.dark};
     font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    color: #fff;
   }
 `;
 

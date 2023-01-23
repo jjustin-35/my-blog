@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
-import BannerStyle from '../../components/banner';
+import Banner from '../../components/banner';
+import dataset from './data';
 
-const Banner = ({data}) => {
+const BannerContainer = ({ variant }) => {
+  const data = dataset[variant];
   const [translateY, setTranslateY] = useState(0);
 
-  const bannerRef = useRef();
+  const bannerRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -24,9 +26,9 @@ const Banner = ({data}) => {
 
   return (
     <section ref={bannerRef}>
-      <BannerStyle data={data} />
+      <Banner data={data} />
     </section>
   );
 };
 
-export default Banner;
+export default BannerContainer;

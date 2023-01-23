@@ -42,7 +42,9 @@ const Header = ({ data, isMobile, isOpen, onClick }) => {
     <Wrapper>
       <Container>
         <Inner>
-          <Brand />
+          <Brand href="/">
+            <img {...data.brand} />
+          </Brand>
           {menuSelector}
         </Inner>
       </Container>

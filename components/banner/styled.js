@@ -1,13 +1,14 @@
-import styled from 'styled-components';
-import data from '../../constants/data/home';
-
-const {bgImage} = data.banner;
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  background-image: url(${bgImage});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  ${({ bgImage }) =>
+    bgImage &&
+    css`
+      background-image: url(${bgImage});
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    `}
   display: flex;
   justify-content: center;
   align-items: center;

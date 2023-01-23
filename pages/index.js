@@ -2,7 +2,6 @@ import Banner from '../containers/banner';
 import Header from '../containers/header';
 import Board from '../containers/board';
 import Head from '../components/head';
-import data from '../constants/data/home';
 import Footer from '../components/footer';
 
 const Home = () => {
@@ -10,7 +9,7 @@ const Home = () => {
     <div style={{height: '200vh'}}>
       <Head />
       <Header />
-      <Banner data={data.banner} />
+      <Banner variant="home" />
       <Board />
       <Footer />
     </div>

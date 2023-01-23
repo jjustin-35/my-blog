@@ -63,7 +63,7 @@ const typogrophy = css`
   font-size: 1rem;
   font-weight: ${fontWeight.regular};
   margin: 0.5rem 0;
-  color: ${({ color }) => color || `${colors.primary}`};
+  color: ${({ color }) => color || `${colors.dark}`};
 `;
 
 export const P = styled.p`

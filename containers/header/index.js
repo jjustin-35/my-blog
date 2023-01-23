@@ -6,9 +6,18 @@ import data from './data';
 const HeaderContainer = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrollDown, setIsScrollDown] = useState(false);
 
   const clickHandler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const scrollHandler = () => {
+    if (window.scrollY > 200) {
+      setIsScrollDown(true);
+    } else {
+      setIsScrollDown(false);
+    }
   };
 
   const resizeHandler = () => {
@@ -20,11 +29,17 @@ const HeaderContainer = () => {
   };
 
   useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, []);
+
+  useEffect(() => {
     window.addEventListener('resize', resizeHandler);
 
     return () => window.removeEventListener('resize', resizeHandler);
   }, []);
-  return <Header data={data} isMobile={isMobile} isOpen={isOpen} onClick={clickHandler} />;
+  return <Header data={data} isMobile={isMobile} isOpen={isOpen} onClick={clickHandler} isScrollDown={isScrollDown} />;
 };
 
 export default HeaderContainer;

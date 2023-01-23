@@ -1,19 +1,23 @@
 import { H2, P, Container } from '../../constants/styled';
-import { Wrapper, Outer } from './styled';
+import { Outer, Wrapper, Inner, CardWrapper } from './styled';
 
 const Card = ({ title, author, date, desc }) => (
-  <Wrapper>
+  <CardWrapper>
     <H2>{title}</H2>
     <P>{desc}</P>
     <P color="grey">
       Post by {author} on {date}.
     </P>
-  </Wrapper>
+  </CardWrapper>
 );
 
 const Board = ({ memos }) => (
   <Outer>
-    <Container>{memos && memos.map((memo) => <Card {...memo} />)}</Container>
+    <Container>
+      <Wrapper style={{ height: '100vh' }}>
+        <Inner>{memos && memos.map((memo) => <Card {...memo} />)}</Inner>
+      </Wrapper>
+    </Container>
   </Outer>
 );
 

@@ -24,11 +24,7 @@ const BannerContainer = ({ variant }) => {
     bannerRef.current.style = `transform: translateY(${translateY}px)`;
   }, [translateY]);
 
-  return (
-    <section ref={bannerRef}>
-      <Banner data={data} />
-    </section>
-  );
+  return <Banner data={data} bannerRef={bannerRef} />;
 };
 
 export default BannerContainer;

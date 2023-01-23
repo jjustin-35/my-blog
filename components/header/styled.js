@@ -2,16 +2,22 @@ import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { colors, breakpoints } from '../../constants/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  padding: 12px;
-  background-color: rgba(255,255,255,0.3);
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  transition: background-color 0.3s ease;
+  z-index: 5;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  ${({ isScrollDown }) =>
+    isScrollDown &&
+    css`
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      background-color: #fff;
+    `}
 
   ${breakpoints.md(css`
     display: none;
@@ -40,12 +46,12 @@ export const Menu = styled.ul`
 
 export const Option = styled.li`
   a {
-    padding: 0.5rem 1rem;
+    padding: 12px 20px;
     color: ${colors.dark};
     font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
     display: block;
-    color: #fff;
   }
 `;
 

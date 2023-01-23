@@ -1,15 +1,15 @@
 import { H1, P } from '../../constants/styled';
 import { Wrapper, BlackBack, Text } from './styled';
 
-const Banner = ({ data }) => {
+const Banner = ({ data, bannerRef }) => {
   const { title, desc, bgImage } = data;
 
   return (
-    <Wrapper bgImage={bgImage}>
-      <BlackBack />
+    <Wrapper bgImage={bgImage} ref={bannerRef}>
+      {/* <BlackBack /> */}
       <Text>
-        <H1 color="white">{title}</H1>
-        <P color="white">{desc}</P>
+        <H1>{title}</H1>
+        <P>{desc}</P>
       </Text>
     </Wrapper>
   );

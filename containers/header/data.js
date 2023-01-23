@@ -1,6 +1,6 @@
 export default {
   brand: {
-    src: '/images/common/blog-header-brand-white.svg',
+    src: '/images/common/blog-header-brand.svg',
     alt: 'img-header-brand',
   },
   options: [

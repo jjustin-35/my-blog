@@ -9,7 +9,7 @@ const Burger = ({ onClick }) => (
   </BurgerWrapper>
 );
 
-const Header = ({ data, isMobile, isOpen, onClick }) => {
+const Header = ({ data, isMobile, isOpen, onClick, isScrollDown }) => {
   const menuSelector = (() => {
     if (isMobile) {
       return (
@@ -39,7 +39,7 @@ const Header = ({ data, isMobile, isOpen, onClick }) => {
   })();
 
   return (
-    <Wrapper>
+    <Wrapper isScrollDown={isScrollDown}>
       <Container>
         <Inner>
           <Brand href="/">

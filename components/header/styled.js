@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import { colors, breakpoints } from '../../constants/styled';
+import { colors, breakpoints, bgColors } from '../../constants/styled';
 
 export const Wrapper = styled.header`
   position: fixed;
@@ -52,6 +52,12 @@ export const Option = styled.li`
     font-weight: 600;
     text-decoration: none;
     display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    :hover{
+      color: #fff;
+      background-color: ${bgColors.primary};
+    }
   }
 `;
 

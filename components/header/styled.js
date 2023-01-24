@@ -19,9 +19,6 @@ export const Wrapper = styled.header`
       background-color: #fff;
     `}
 
-  ${breakpoints.md(css`
-    display: none;
-  `)}
 `;
 
 export const Inner = styled.div`
@@ -58,6 +55,11 @@ export const Option = styled.li`
       color: #fff;
       background-color: ${bgColors.primary};
     }
+
+    ${breakpoints.md(css`
+      text-align: center;
+      padding: 12px 30px;
+    `)}
   }
 `;
 
@@ -65,6 +67,7 @@ export const BurgerWrapper = styled.a`
   display: none;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 
   span {
     width: 100%;
@@ -85,7 +88,7 @@ export const MobileMenu = styled.ul`
   transition: transform 0.3s linear;
   background-color: #fff;
   z-index: 2;
-  padding: 12px;
+  padding: 20px 12px;
 
   ${({ isOpen }) =>
     isOpen &&
@@ -104,6 +107,8 @@ export const BlackMask = styled.div`
   z-index: 1;
   visibility: hidden;
   opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+
   ${({ isOpen }) =>
     isOpen &&
     css`

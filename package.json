@@ -12,12 +12,15 @@
   "dependencies": {
     "@next/font": "13.1.0",
     "@reduxjs/toolkit": "^1.9.1",
+    "easymde": "^2.18.0",
     "eslint-config-next": "13.1.0",
     "next": "13.1.0",
+    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.4",
     "react-redux": "^8.0.5",
+    "react-simplemde-editor": "^5.2.0",
     "redux-saga": "^1.2.2",
     "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.6"
@@ -25,6 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/eslint-parser": "^7.19.1",
+    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",

@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, code, em, img, small, strike, strong, sub, sup, tt, var,
 	b, u, i, center,dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
+	fieldset, form, label, legend, textarea,
 	table, caption, tbody, tfoot, thead, tr, th, td,
 	article, aside, canvas, details, embed, 
 	figure, figcaption, footer, header, hgroup, 
@@ -26,21 +26,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 `;
 

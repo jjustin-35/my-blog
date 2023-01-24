@@ -5,7 +5,7 @@ export const MarkdownWrapper = styled.div`
   font-size: 1rem;
   font-weight: ${fontWeight.regular};
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: ${fontWeight.bold};
     margin: 2rem 0;
   }

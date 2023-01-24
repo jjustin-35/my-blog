@@ -5,7 +5,7 @@ import { Wrapper, Inner, Brand, Menu, MobileMenu, Option, BurgerWrapper, BlackMa
 
 const Burger = ({ onClick }) => (
   <BurgerWrapper onClick={onClick}>
-    <span class="material-icons">menu</span>
+    <span className="material-icons">menu</span>
   </BurgerWrapper>
 );
 
@@ -15,7 +15,7 @@ const Header = ({ data, isMobile, isOpen, onClick, isScrollDown }) => {
       return (
         <>
           <Burger onClick={onClick} />
-          <BlackMask isOpen={isOpen} />
+          <BlackMask isOpen={isOpen} onClick={onClick} />
           <MobileMenu isOpen={isOpen}>
             {data.options.map((option) => (
               <Option>

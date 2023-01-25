@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { Container } from '../../constants/styles';
 import { Wrapper, Inner, Brand, Menu, MobileMenu, Option, BurgerWrapper, BlackMask } from './styled';
+import Button from '../button';
 
 const Burger = ({ onClick }) => (
   <BurgerWrapper onClick={onClick}>

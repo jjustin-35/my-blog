@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div style={{height: '200vh'}}>
       <Head />
-      <Header />
+      <Header variant="frontSide" />
       <Banner variant="home" />
       <Board />
       <Footer />

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import Header from '../../components/header';
-import data from './data';
+import dataset from './data';
 
-const HeaderContainer = () => {
+const HeaderContainer = ({ variant }) => {
+  const data = dataset[variant];
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollDown, setIsScrollDown] = useState(false);
@@ -29,6 +30,7 @@ const HeaderContainer = () => {
   };
 
   useEffect(() => {
+    if (variant !== 'frontSide') return setIsScrollDown(true);
     window.addEventListener('scroll', scrollHandler);
 
     return () => window.removeEventListener('scroll', scrollHandler);

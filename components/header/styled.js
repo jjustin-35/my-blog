@@ -90,6 +90,7 @@ export const MobileMenu = styled.ul`
   background-color: #fff;
   z-index: 2;
   padding: 20px 12px;
+  list-style: none;
 
   ${({ isOpen }) =>
     isOpen &&

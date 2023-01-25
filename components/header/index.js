@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Container } from '../../constants/styled';
+import { Container } from '../../constants/styles';
 import { Wrapper, Inner, Brand, Menu, MobileMenu, Option, BurgerWrapper, BlackMask } from './styled';
 
 const Burger = ({ onClick }) => (

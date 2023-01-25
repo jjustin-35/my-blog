@@ -1,4 +1,4 @@
-import { H2, P, Container } from '../../constants/styled';
+import { H2, P, Container } from '../../constants/styles';
 import { Outer, Wrapper, Inner, CardWrapper } from './styled';
 
 const Card = ({ title, author, date, desc }) => (

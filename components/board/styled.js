@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { bgColors } from '../../constants/styled';
+import { bgColors } from '../../constants/styles';
 
 export const Outer = styled.div`
   position: relative;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import { colors, breakpoints, bgColors } from '../../constants/styled';
+import { colors, breakpoints, bgColors } from '../../constants/styles';
 
 export const Wrapper = styled.header`
   position: fixed;
@@ -39,6 +39,7 @@ export const Menu = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 `;
 
 export const Option = styled.li`

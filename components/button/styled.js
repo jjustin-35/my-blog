@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { bgColors } from '../../constants/styled';
+import { bgColors } from '../../constants/styles';
 
 export const Wrapper = styled.button`
+  cursor: pointer;
   padding: 0.5rem 1.5rem;
   color: #fff;
   border: none;
@@ -9,7 +10,7 @@ export const Wrapper = styled.button`
   font-size: 1rem;
   display: flex;
   align-items: center;
-  background-color: ${({ theme }) => theme || bgColors.primary};
+  background-color: ${({ bgColor }) => bgColor || bgColors.primary};
   ${({ type }) =>
     type === 'pill' &&
     css`

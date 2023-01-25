@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import NextLink from 'next/link';
 
 const primary = '#56b9ac';
 const secondary = '#f9c630';
@@ -8,7 +9,7 @@ export const colors = {
   primary,
   secondary,
   third,
-  dark: '#394248'
+  dark: '#394248',
 };
 
 export const bgColors = {
@@ -16,6 +17,7 @@ export const bgColors = {
   secondary,
   third,
   purple: '#4e2ec8',
+  codeBlock: '#f2f2f2',
 };
 
 const breakdown = (query) => (style) =>
@@ -72,31 +74,36 @@ export const P = styled.p`
 
 export const H1 = styled.h1`
   ${typogrophy};
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: ${fontWeight.bold};
   margin: 2rem 0;
 `;
 
 export const H2 = styled.h2`
   ${typogrophy};
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: ${fontWeight.bold};
   margin: 1.5rem 0;
 `;
 
 export const H3 = styled.h3`
   ${typogrophy};
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin: 1rem 0;
 `;
 
 export const H4 = styled.h4`
   ${typogrophy};
+  font-size: 1.5rem;
+`;
+
+export const H5 = styled.h5`
+  ${typogrophy};
   font-size: 1.25rem;
 `;
 
 // link
-export const Link = styled.a`
+export const Link = styled(NextLink)`
   ${typogrophy};
   text-decoration: ${({ isUnderline }) => (isUnderline ? 'unset' : 'none')};
 `;

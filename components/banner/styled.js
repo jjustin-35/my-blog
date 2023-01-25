@@ -30,4 +30,8 @@ export const Text = styled.div`
   z-index: 1;
   text-align: center;
   padding: 30vh 0;
+
+  h1{
+    font-size: 4rem;
+  }
 `;

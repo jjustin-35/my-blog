@@ -1,5 +1,5 @@
 import { MarkdownWrapper } from './styled';
-import { Container } from '../../constants/styled';
+import { Container } from '../../constants/styles';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 

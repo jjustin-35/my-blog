@@ -8,5 +8,5 @@ export const Wrapper = styled.section`
 export const Text = styled(P)`
   padding: 1rem;
   text-align: center;
-  color: #fff;
+  margin: unset;
 `;

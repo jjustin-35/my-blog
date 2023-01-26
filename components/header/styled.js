@@ -18,7 +18,6 @@ export const Wrapper = styled.header`
       box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
       background-color: #fff;
     `}
-
 `;
 
 export const Inner = styled.div`
@@ -52,13 +51,12 @@ export const Option = styled.li`
     display: block;
     transition: color 0.3s ease, background-color 0.3s ease;
 
-    :hover{
+    :hover {
       color: #fff;
       background-color: ${bgColors.primary};
     }
 
     ${breakpoints.md(css`
-      text-align: center;
       padding: 12px 30px;
     `)}
   }
@@ -69,19 +67,41 @@ export const BurgerWrapper = styled.a`
   width: 24px;
   height: 24px;
   cursor: pointer;
+  position: relative;
+  z-index: 5;
 
   span {
     width: 100%;
-    height: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        &:first-child {
+          transform: rotate(45deg) translate(0, 9.5px);
+        }
+        &:last-child {
+          transform: rotate(-45deg) translateY(-9.5px);
+        }
+        &:nth-child(2) {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+      `}
   }
 
   ${breakpoints.md(css`
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   `)}
 `;
 
 export const MobileMenu = styled.ul`
   position: fixed;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
@@ -89,7 +109,7 @@ export const MobileMenu = styled.ul`
   transition: transform 0.3s linear;
   background-color: #fff;
   z-index: 2;
-  padding: 20px 12px;
+  padding: 57px 12px 20px;
   list-style: none;
 
   ${({ isOpen }) =>

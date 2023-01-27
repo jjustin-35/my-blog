@@ -2,6 +2,7 @@ import { useCallback, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { noteActions } from '../../redux/slices/noteSlice';
 import TextEditor from '../../components/textEditor';
+import Note from '../../constants/schema/note';
 import data from './data';
 
 const TextEditorContainer = () => {
@@ -15,25 +16,28 @@ const TextEditorContainer = () => {
 
   useEffect(() => {
     if (markdown) {
-      const firstline = markdown.split('\n')[0];
-      const title = /# /.test(firstline) && firstline.replace('# ', '');
-      const desc = markdown.split('\n')[1];
+      const lines = markdown.split('\n');
+      const firstline = lines.find((line) => /# /.test(line));
+      const title = firstline?.replace('# ', '');
+      const desc = lines.filter((line) => line !== firstline).find((line) => !!line);
+      const tagString = lines.filter((line) => /######tag:/.test(line))[0];
+      const tag = tagString?.replace('######tag:', '').replace(' ', '').split(',');
       setMeta({
         title,
         desc,
-        time: Date.now(),
+        tag,
       });
     }
   }, [markdown]);
 
   const clickHandler = () => {
     if (meta && markdown) {
-      dispatch(
-        noteActions.postNote({
-          ...meta,
-          content: markdown,
-        }),
-      );
+      const note = new Note({
+        ...meta,
+        content: markdown,
+        author: 'justin',
+      });
+      dispatch(noteActions.postNote({ ...note }));
     }
   };
 

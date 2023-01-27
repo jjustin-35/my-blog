@@ -6,7 +6,29 @@ import { noteActions } from '../slices/noteSlice';
 const { getNote, postNote, putNote, deleteNote } = noteActions;
 
 function* fetchNote(action) {
-  const data = yield call(fetchNoteApi, action.payload);
+  console.log(action)
+  const req = {
+    body: action.payload,
+  };
+
+  switch (action.type) {
+    case getNote.toString():
+      req.method = 'GET';
+      break;
+    case postNote.toString():
+      req.method = 'POST';
+      break;
+    case putNote.toString():
+      req.method = 'PUT';
+      break;
+    case deleteNote.toString():
+      req.method = 'DELETE';
+      break;
+    default:
+      req.method = '';
+  }
+  yield console.log(req);
+  const data = yield call(fetchNoteApi, req);
   if (!data || data.error_code) {
     yield put({ type: `${action.type}Fail` });
   } else {

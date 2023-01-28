@@ -6,7 +6,6 @@ import { noteActions } from '../slices/noteSlice';
 const { getNote, postNote, putNote, deleteNote } = noteActions;
 
 function* fetchNote(action) {
-  console.log(action)
   const req = {
     body: action.payload,
   };
@@ -27,7 +26,6 @@ function* fetchNote(action) {
     default:
       req.method = '';
   }
-  yield console.log(req);
   const data = yield call(fetchNoteApi, req);
   if (!data || data.error_code) {
     yield put({ type: `${action.type}Fail` });

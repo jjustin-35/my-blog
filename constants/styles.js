@@ -10,6 +10,7 @@ export const colors = {
   secondary,
   third,
   dark: '#394248',
+  grey: '#ddd',
 };
 
 export const bgColors = {
@@ -18,6 +19,7 @@ export const bgColors = {
   third,
   purple: '#4e2ec8',
   codeBlock: '#f2f2f2',
+  dark: '#394248',
 };
 
 const breakdown = (query) => (style) =>
